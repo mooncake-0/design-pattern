@@ -1,5 +1,7 @@
 package behavioral.observer.v2;
 
+import behavioral.observer.v1.WeatherDataV1;
+
 import java.util.Observable;
 
 /*
@@ -14,6 +16,12 @@ public class WeatherDataV2 extends Observable {
     private float temp;
     private float humidity;
     private float pressure;
+
+    public WeatherDataV2(float temp, float humidity, float pressure) {
+        this.temp = temp;
+        this.humidity = humidity;
+        this.pressure = pressure;
+    }
 
     // 바뀐 날씨 Data 들을 받아서 update 를 시작한다
     public void setChangedMeasurements(float temp, float humidity, float pressure) {

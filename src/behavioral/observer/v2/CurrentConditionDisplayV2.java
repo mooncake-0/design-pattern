@@ -13,12 +13,8 @@ public class CurrentConditionDisplayV2 implements Observer {
     private float humidity;
     private float pressure;
 
-    public CurrentConditionDisplayV2(Observable observable, float temp, float humidity, float pressure) {
-        // 초기값은 주입받는다
-        this.temp = temp;
-        this.humidity = humidity;
-        this.pressure = pressure;
-
+    public CurrentConditionDisplayV2(Observable observable) {
+        this.observable = observable;
         this.observable.addObserver(this);
     }
 

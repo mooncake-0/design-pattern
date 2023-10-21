@@ -3,6 +3,8 @@ package behavioral.observer;
 import behavioral.observer.v1.CurrentConditionDisplayV1;
 import behavioral.observer.v1.Subject;
 import behavioral.observer.v1.WeatherDataV1;
+import behavioral.observer.v2.CurrentConditionDisplayV2;
+import behavioral.observer.v2.WeatherDataV2;
 
 public class ObserverTest {
 
@@ -17,6 +19,12 @@ public class ObserverTest {
         weatherDataV1.setChangedMeasurements(20, 20, 20);
 
         // 다른 Observer 도 추가하고 싶으면 간단하게 추가하면 된다
+        System.out.println("------------------ JAVA API 사용");
+        //
 
+        WeatherDataV2 weatherDataV2 = new WeatherDataV2(10, 20, 30);
+        CurrentConditionDisplayV2 displayV2 = new CurrentConditionDisplayV2(weatherDataV2);
+
+        weatherDataV2.setChangedMeasurements(30, 40, 50); // 하면 끝
     }
 }
